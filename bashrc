@@ -15,3 +15,5 @@ fi
 
 
 . "$DOTFILES_PATH/bash/prompt.sh"
+. "$DOTFILES_PATH/bash/editor.sh"
+. "$DOTFILES_PATH/bash/path.sh"
