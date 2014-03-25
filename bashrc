@@ -22,7 +22,7 @@ fi
 . "$DOTFILES_PATH/bash/aliases.sh"
 . "$DOTFILES_PATH/bash/path.sh"
 
-
+shopt -s nocaseglob
 
 if [[ $OSTYPE == darwin* ]]
 then
