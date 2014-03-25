@@ -9,10 +9,11 @@ RAN_BASHRC=1
 # DOTFILES_PATH="`dirname \"$0\"`"
 DOTFILES_PATH=`readlink ~/.bashrc`
 DOTFILES_PATH=`dirname $DOTFILES_PATH`
-if [ -z "$DOTFILES_PATH"  ] ; then
-    # error; for some reason, the path is not accessible
-    # to the script (e.g. permissions re-evaled after suid)
-    exit 1  # fail
+if [ -z "$DOTFILES_PATH"  ]
+then
+    # For some reason, the path is not accessible to the script (e.g.
+    # permissions re-evaled after suid)
+    exit 1
 fi
 
 . "$DOTFILES_PATH/bash/prompt.sh"
@@ -21,3 +22,9 @@ fi
 . "$DOTFILES_PATH/bash/aliases.sh"
 . "$DOTFILES_PATH/bash/path.sh"
 
+
+
+if [[ $OSTYPE == darwin* ]]
+then
+    . "$DOTFILES_PATH/bash/darwin.sh"
+fi
