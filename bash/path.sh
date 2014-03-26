@@ -1,3 +1,6 @@
+# Add "rooty" paths to make sure apt-get et al play nice with sudo
+PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
+
 # I tend to keep locally compiled software in /opt
 if [ -d "/opt/bin" ]
 then
