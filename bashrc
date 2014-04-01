@@ -1,7 +1,10 @@
 #!/bin/bash
 
+# Interactive only
+[ -z "$PS1" ] && return
+
 # Only run stuff once.
-# [ -z "$RAN_BASHRC" ] && return # Disable for testing
+[ -z "$RAN_BASHRC" ] && return # Disable for testing
 RAN_BASHRC=1
 
 # Get my current run path, used for grabbing the rest of the files from the Git
