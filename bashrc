@@ -1,10 +1,18 @@
 #!/bin/bash
 
 # Interactive only
-[ -z "$PS1" ] && return
+if [ -z "$PS1" ]
+then
+    echo "Not running bashrc, this is not an interactive shell!"
+    return
+fi
 
 # Only run stuff once.
-[ -z "$RAN_BASHRC" ] && return # Disable for testing
+if [ -z "$RAN_BASHRC" ]
+then
+    echo "Not running bashrc, already ran it!"
+    # return
+fi
 RAN_BASHRC=1
 
 # Get my current run path, used for grabbing the rest of the files from the Git
