@@ -5,9 +5,9 @@ then
     export MANPATH=/opt/local/share/man:$MANPATH
 fi
 
-if [ -f "/opt/local/etc/bash_completion" ]
+if [ -f "/opt/local/etc/profile.d/bash_completion.sh" ]
 then
-	. /opt/local/etc/bash_completion
+	. /opt/local/etc/profile.d/bash_completion.sh
 fi
 
 alias ls='ls -GF'
