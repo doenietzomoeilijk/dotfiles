@@ -1,0 +1,48 @@
+[user]
+	name = Max Roeleveld
+	email = doenietzomoeilijk@gmail.com
+[github]
+	user = doenietzomoeilijk
+	token = e6c34736f493597ad77e4524b8c23ed9
+
+[color]
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+; Highlight whitespace in diffs
+
+[color]
+	ui = true
+[color "diff"]
+	whitespace = red reverse
+[core]
+	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = ~/.gitignore-global
+
+; Add aliases to your ~/.gitconfig file:
+
+[alias]
+	st = status
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	dc = diff --cached
+	lg = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
+; Show files ignored by git:
+	ign = ls-files -o -i --exclude-standard
