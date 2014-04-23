@@ -10,4 +10,8 @@ then
 	. /opt/local/etc/profile.d/bash_completion.sh
 fi
 
+if [ -f $(brew --prefix)/share/bash-completion/bash_completion ]; then
+	. $(brew --prefix)/share/bash-completion/bash_completion
+fi
+
 alias ls='ls -GF'
