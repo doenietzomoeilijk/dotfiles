@@ -7,14 +7,6 @@ then
     return
 fi
 
-# Only run stuff once.
-if [ -z "$RAN_BASHRC" ]
-then
-    echo "Not running bashrc, already ran it!"
-    # return
-fi
-RAN_BASHRC=1
-
 # Get my current run path, used for grabbing the rest of the files from the Git
 # repo.
 # DOTFILES_PATH="`dirname \"$0\"`"
