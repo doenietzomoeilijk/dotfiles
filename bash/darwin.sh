@@ -27,4 +27,9 @@ then
     export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
+if [ -d "/usr/local/opt/php55/bin" ]
+then
+    export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+fi
+
 alias ls='ls -GF'
