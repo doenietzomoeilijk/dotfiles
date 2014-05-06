@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Interactive only
-if [ -z "$PS1" ]
-then
-    echo "Not running bashrc, this is not an interactive shell!"
+if [ -z "$PS1" ]; then
+    # Not running bashrc, this is not an interactive shell!
     return
 fi
 
@@ -12,8 +10,7 @@ fi
 # DOTFILES_PATH="`dirname \"$0\"`"
 DOTFILES_PATH=`readlink ~/.bashrc`
 DOTFILES_PATH=`dirname $DOTFILES_PATH`
-if [ -z "$DOTFILES_PATH"  ]
-then
+if [ -z "$DOTFILES_PATH" ]; then
     # For some reason, the path is not accessible to the script (e.g.
     # permissions re-evaled after suid)
     exit 1
@@ -27,7 +24,6 @@ fi
 
 shopt -s nocaseglob
 
-if [[ $OSTYPE == darwin* ]]
-then
+if [[ $OSTYPE == darwin* ]]; then
     . "$DOTFILES_PATH/bash/darwin.sh"
 fi
