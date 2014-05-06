@@ -32,4 +32,11 @@ then
     export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
 fi
 
+# Set up mvi alias if we have MacVim installed -- allows you to easily open
+# stuff from the command line without spawning a million windows.
+if [ -d "/Applications/MacVim.app" ]
+then
+    alias mvi='open -a /Applications/MacVim.app/'
+fi
+
 alias ls='ls -GF'
