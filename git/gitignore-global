@@ -2,3 +2,7 @@ tmp/
 .DS_Store
 .AppleDouble/
 tags
+GPATH
+GRTAGS
+GTAGS
+HTML

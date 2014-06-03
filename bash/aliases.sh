@@ -8,3 +8,5 @@ if [[ -n "$TMUX" ]]
 then
     alias irssi='TERM=screen-256color irssi'
 fi
+
+alias git-root='if [ "`git rev-parse --show-cdup`" != "" ]; then cd `git rev-parse --show-cdup`; fi'
