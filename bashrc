@@ -24,6 +24,6 @@ fi
 
 shopt -s nocaseglob
 
-if [[ $OSTYPE == darwin* ]]; then
+if [[ "$OSTYPE" == darwin* ]]; then
     . "$DOTFILES_PATH/bash/darwin.sh"
 fi
