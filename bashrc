@@ -27,3 +27,7 @@ shopt -s nocaseglob
 if [[ "$OSTYPE" == darwin* ]]; then
     . "$DOTFILES_PATH/bash/darwin.sh"
 fi
+
+if [ -f ~/.bashrc-local ]; then
+    . ~/.bashrc-local
+fi
