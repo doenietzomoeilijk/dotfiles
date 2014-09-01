@@ -51,5 +51,34 @@ function parse_git_branch() {
     git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]/ \[$ORANGE\]\h \[$WHITE\]/ \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" / \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+function get_last_exit() {
+    local EXITCODE="$?"
+    local EXIT=""
+
+    echo "pre:${EXITCODE}:"
+    if [[ $EXITCODE != 0 ]]; then
+        EXIT=""
+    else
+        EXIT=$EXITCODE
+    fi
+
+    echo -n "-${EXIT}-"
+}
+
+# Nu in __prompt_command
+# export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]/ \[$ORANGE\]\h \[$WHITE\]/ \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" / \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$(get_last_exit)\$ \[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
+
+function __prompt_command() {
+    local EXIT="$?"             # This needs to be first
+    PS1=""
+
+    PS1+="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]/ \[$ORANGE\]\h \[$WHITE\]/ \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" / \")\[$PURPLE\]\$(parse_git_branch)\n"
+
+    if [ $EXIT != 0 ]; then
+        PS1+="\[${MAGENTA}\][${EXIT}]\[${WHITE}\] "      # Add red if exit code non 0
+    fi
+
+    PS1+="\[${WHITE}\]\$ \[$RESET\]"
+}
+export PROMPT_COMMAND=__prompt_command

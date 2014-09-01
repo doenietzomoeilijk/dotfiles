@@ -52,5 +52,8 @@
 
     root = rev-parse --show-toplevel
 
+    # git reauthor $START..$END
+    reauthor = !sh -c 'eval `git log --reverse --topo-order --pretty=format:\"git cherry-pick %H &&  git commit --amend -C %H --author=\\\"%aN <%aE>\\\" && \" $0 ` "echo success" '
+
 [push]
 	default = simple
