@@ -8,6 +8,12 @@ then
     MANPATH="/opt/share/man:$MANPATH"
 fi
 
+# We may have the MacOS X MySQL packages installed.
+if [ -d "/usr/local/mysql/bin" ]; then
+    PATH="/usr/local/mysql/bin:$PATH"
+    MANPATH="/usr/local/mysql/man:$MANPATH"
+fi
+
 # Add ~/bin if it exists
 if [ -d "$HOME/bin" ]
 then
