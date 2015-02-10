@@ -73,12 +73,12 @@ function __prompt_command() {
     local EXIT="$?"             # This needs to be first
     PS1=""
 
-    PS1+="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]/ \[$ORANGE\]\h \[$WHITE\]/ \[$MAGENTA\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" / \")\[$PURPLE\]\$(parse_git_branch)\n"
+    PS1+="\[${BOLD}${MAGENTA}\]\u \[$RESET\]/ \[$ORANGE\]\h \[$RESET\]/ \[$MAGENTA\]\w\[$RESET\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" / \")\[$PURPLE\]\$(parse_git_branch)\n"
 
     if [ $EXIT != 0 ]; then
-        PS1+="\[${MAGENTA}\][${EXIT}]\[${WHITE}\] "      # Add red if exit code non 0
+        PS1+="\[${MAGENTA}\][${EXIT}]\[${RESET}\] "      # Add red if exit code non 0
     fi
 
-    PS1+="\[${WHITE}\]\$ \[$RESET\]"
+    PS1+="\[${RESET}\]\$ \[$RESET\]"
 }
 export PROMPT_COMMAND=__prompt_command
