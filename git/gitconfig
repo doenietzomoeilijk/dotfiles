@@ -25,7 +25,8 @@
 
 [core]
 	whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-	excludesfile = /Users/max/git/dotfiles/git/gitignore-global
+	excludesfile = /Users/max/.gitignore-global
+	autocrlf = input
 
 [merge]
 	tool = vimdiff
