@@ -1,0 +1,285 @@
+# vim: set et:
+# http://pastebin.com/S8m1jnY3
+exec --no-startup-id "compton -b"
+
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+set $font pango:Monoid HalfTight,Fira Sans Condensed, Awesome 10
+set $mod Mod4
+
+# black
+set $color0 #555555
+set $color8 #888888
+
+# red
+set $color1 #9c3528
+set $color9 #d64937
+
+# green
+set $color2 #61bc3b
+set $color10 #86df5d
+
+# yellow
+set $color3 #f3b43a
+set $color11 #fdd75a
+
+# blue
+set $color4 #0d68a8
+set $color12 #0f75bd
+
+# magenta
+set $color5 #744560
+set $color13 #9e5e83
+
+# cyan
+set $color6 #288e9c
+set $color14 #37c3d6
+
+# white
+set $color7 #a2a2a2
+set $color15 #f9f9f9
+
+set $background #282828 
+set $foreground #a2a2a2 
+
+set $transparent #00000000
+
+# class                 border      backgr.     text        indicator child_border
+client.focused          $color4     $color4     #ffffff     $color12  $color4
+client.focused_inactive $color0     $color0     $foreground $color8   $color0 
+client.unfocused        $background $background $foreground $color0   $background
+client.urgent           $color1     $color1     $foreground $color9   $color1
+client.placeholder      $background $background $foreground $color12  $color4
+client.background       $background
+
+gaps inner 25
+gaps outer 5
+smart_borders no_gaps
+# smart_gaps on
+# hide_edge_borders both
+new_window pixel 3
+new_float pixel 3
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+font $font
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start dmenu (a program launcher)
+#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id rofi -show combi
+
+# change focus
+# bindsym $mod+h focus left
+# bindsym $mod+j focus down
+# bindsym $mod+k focus up
+# bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+# bindsym $mod+Shift+h move left
+# bindsym $mod+Shift+j move down
+# bindsym $mod+Shift+k move up
+# bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+# bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split toggle
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# Workspaces and Assignments
+set $workspace1 "1  term"
+set $workspace2 "2  web"
+set $workspace3 "3  mail"
+set $workspace4 "4  files"
+set $workspace5 "5  code"
+set $workspace6 "6  chat" 
+set $workspace7 "7  misc" 
+set $workspace8 "8  db"
+set $workspace9 "9  rdp"
+set $workspace10 "10 "
+assign [class="URxvt"] $workspace1
+assign [class="google-chrome"] $workspace2
+assign [class="Firefox"] $workspace2
+assign [class="Evolution"] $workspace3
+assign [class="Thunar"] $workspace4
+assign [class="Nautilus"] $workspace4
+assign [class="Code"] $workspace5
+assign [class="jetbrains-phpstorm"] $workspace5
+assign [class="Slack"] $workspace6
+assign [class="Enpass"] $workspace7
+assign [class="ownCloud"] $workspace7
+assign [class="heidisql.exe"] $workspace8
+assign [class="vinagre"] $workspace9
+#for_window [class="Enpass"] floating enable
+#for_window [class="Eog"] floating enable
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace1; move workspace to output eDP1
+bindsym $mod+2 workspace $workspace2; move workspace to output DP1
+bindsym $mod+3 workspace $workspace3; move workspace to output HDMI1
+bindsym $mod+4 workspace $workspace4; move workspace to output eDP1
+bindsym $mod+5 workspace $workspace5; move workspace to output DP1; layout stacked
+bindsym $mod+6 workspace $workspace6; move workspace to output HDMI1
+bindsym $mod+7 workspace $workspace7; move workspace to output eDP1
+bindsym $mod+8 workspace $workspace8; move workspace to output DP1
+bindsym $mod+9 workspace $workspace9; move workspace to output HDMI1
+bindsym $mod+0 workspace $workspace10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace1; workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2; workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3; workspace $workspace3; layout tabbed
+bindsym $mod+Shift+4 move container to workspace $workspace4; workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5; workspace $workspace5; layout tabbed
+bindsym $mod+Shift+6 move container to workspace $workspace6; workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7; workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8; workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9; workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10; workspace $workspace10
+
+bindsym $mod+Return exec i3-sensible-terminal; workspace $workspace1
+bindsym $mod+Shift+Return exec nautilus
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# Reset displays and Workspaces
+bindsym $mod+p exec --no-status-id /home/max/bin/xwork;
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+    id bar-1
+    status_command SCRIPT_DIR=~/.config/i3/blocks i3blocks -c ~/.config/i3/blocks/i3blocks.conf
+    font pango:Roboto Condensed, Awesome 12
+    position top
+    tray_output primary
+    separator_symbol ·
+    colors {
+        background $background
+        statusline $color7
+        separator  $color0
+        focused_statusline $color15
+        focused_workspace $color12 $color4  $color15
+        active_workspace  $color0  $color0  $color15
+        urgent_workspace  $color1  $color9  $color15
+        binding_mode      $color3  $color11 $color1
+    }
+}
+
+# NetworkManager applet
+exec --no-startup-id nm-applet
+
+# Fix trackpad
+exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
+exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
+
+# Locking, stolen from https://faq.i3wm.org/question/239/how-do-i-suspendlockscreen-and-logout.1.html
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym e exec --no-startup-id i3exit logout, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Pause mode "$mode_system"
+bindsym $mod+Shift+L exec --no-startup-id i3exit lock
+
+# maybe implement https://faq.i3wm.org/question/6665/lockscreen-after-closing-my-laptop.1.html
+
+# Volume and other interesting keys
+# See the list here: http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+bindsym XF86Sleep exec --no-startup-id i3exit suspend
+bindsym XF86Calculator exec --no-startup-id gnome-calculator
+bindsym XF86Explorer exec nautilus
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+bindsym $mod+b exec --no-startup-id xbacklight -inc 10
+bindsym $mod+Shift+b exec --no-startup-id xbacklight -dec 10
+bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
+bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
+
+exec /usr/bin/owncloud
+exec /home/max/Enpass/Enpass
+
+exec --no-startup-id autocutsel -s CLIPBOARD
+exec --no-startup-id autocutsel -s PRIMARY
+
+exec --no-startup-id xautolock -time 3 -locker '/home/mroeleveld/bin/i3exit lock'
+exec --no-startup-id feh --bg-fill ownCloud/Wallpapers/New\ imgur\ dump/ugzhXbn.jpg
+exec --no-startup-id xrandr --output eDP1 --primary
