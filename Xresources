@@ -80,7 +80,7 @@ URxvt.color0: [95]#282828
 
 ! Rofi {{{
 ! Enabled modi
-rofi.modi:                           window,drun,ssh
+rofi.modi:                           window,ssh,drun,run
 ! Window opacity
 rofi.opacity:                        90
 ! Window width
