@@ -35,19 +35,41 @@ if ($acpi !~ /: (\w+), (\d+)%/) {
 
 $status = $1;
 $percent = $2;
-$full_text = "$percent%";
+
+#  fa-battery-0 (alias) [&#xf244;] 4.4
+#  fa-battery-1 (alias) [&#xf243;] 4.4
+#  fa-battery-2 (alias) [&#xf242;] 4.4
+#  fa-battery-3 (alias) [&#xf241;] 4.4
+#  fa-battery-4 (alias) [&#xf240;] 4.4
+#  fa-battery-empty [&#xf244;] 4.4
+#  fa-battery-full [&#xf240;] 4.4
+#  fa-battery-half [&#xf242;] 4.4
+#  fa-battery-quarter [&#xf243;] 4.4
+#  fa-battery-three-quarters [&#xf241;]
+
 
 if ($status eq 'Discharging') {
-	$full_text .= ' DIS';
+	if ($percent < 10) {
+		$full_text .= "";
+	} elsif ($percent < 30) {
+		$full_text .= "";
+	} elsif ($percent < 50) {
+		$full_text .= "";
+	} elsif ($percent < 70) {
+		$full_text .= "";
+	} else {
+		$full_text .= "";
+	}
 } elsif ($status eq 'Charging') {
-	$full_text .= ' CHR';
+	$full_text .= '';
 }
 
+$full_text .= " $percent%";
 $short_text = $full_text;
 
-if ($acpi =~ /(\d\d:\d\d):/) {
-	$full_text .= " ($1)";
-}
+# if ($acpi =~ /(\d\d:\d\d):/) {
+#	$full_text .= " ($1)";
+# }
 
 # print text
 print "$full_text\n";

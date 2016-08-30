@@ -51,8 +51,8 @@ client.urgent           $color1     $color1     $foreground $color9     $color1
 client.placeholder      $background $background $foreground $color12    $color4
 client.background       $background
 
-gaps inner 25
-gaps outer 5
+gaps inner 20
+gaps outer 10
 smart_borders no_gaps
 # smart_gaps on
 # hide_edge_borders both
@@ -216,20 +216,21 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
     id bar-1
+    i3bar_command i3bar -t
     status_command SCRIPT_DIR=~/.config/i3/blocks i3blocks -c ~/.config/i3/blocks/i3blocks.conf
     font pango:Roboto Condensed, Awesome 12
     position top
     tray_output primary
-    separator_symbol ·
+    separator_symbol false
     colors {
-        background $background
+        background $transparent
         statusline $color7
         separator  $color0
         focused_statusline $color15
-        focused_workspace $color12 $color4  $color15
-        active_workspace  $color0  $color0  $color15
-        urgent_workspace  $color1  $color9  $color15
-        binding_mode      $color3  $color11 $color1
+        focused_workspace  $color12 $color4  $color15
+        active_workspace   $color0  $color0  $color15
+        urgent_workspace   $color1  $color9  $color15
+        binding_mode       $color3  $color11 $color1
     }
 }
 

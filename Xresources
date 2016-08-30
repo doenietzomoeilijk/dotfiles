@@ -57,7 +57,7 @@ URxvt.keysym.C-Delete: perl:matcher:last
 URxvt.keysym.M-Delete: perl:matcher:list
 URxvt.background: [95]#282828
 URxvt.geometry: 100x30
-URxvt.blurRadius: 10
+URxvt.blurRadius: 15
 URxvt.shading: 20
 URxvt.depth: 32
 URxvt.transparent: on
