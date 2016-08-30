@@ -1,6 +1,6 @@
 # vim: set et:
 # http://pastebin.com/S8m1jnY3
-exec --no-startup-id "compton -b"
+exec --no-startup-id "compton -b --config ~/.config/i3/compton.conf"
 
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 set $font pango:Monoid HalfTight,Fira Sans Condensed, Awesome 10
@@ -281,5 +281,5 @@ exec --no-startup-id autocutsel -s CLIPBOARD
 exec --no-startup-id autocutsel -s PRIMARY
 
 exec --no-startup-id xautolock -time 3 -locker '/home/mroeleveld/bin/i3exit lock'
-exec --no-startup-id feh --bg-fill ownCloud/Wallpapers/New\ imgur\ dump/ugzhXbn.jpg
+exec --no-startup-id feh --bg-fill ~/.config/i3/desktop.jpg
 exec --no-startup-id xrandr --output eDP1 --primary
