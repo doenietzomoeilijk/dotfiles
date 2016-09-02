@@ -143,11 +143,11 @@ assign [class="Nautilus"] $workspace4
 assign [class="Code"] $workspace5
 assign [class="jetbrains-phpstorm"] $workspace5
 assign [class="Slack"] $workspace6
-assign [class="Enpass"] $workspace7
+# assign [class="Enpass"] $workspace7
 assign [class="ownCloud"] $workspace7
 assign [class="heidisql.exe"] $workspace8
 assign [class="vinagre"] $workspace9
-#for_window [class="Enpass"] floating enable
+for_window [class="Enpass"] floating enable
 #for_window [class="Eog"] floating enable
 
 # switch to workspace
