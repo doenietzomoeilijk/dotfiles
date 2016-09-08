@@ -295,3 +295,4 @@ exec --no-startup-id autocutsel -s PRIMARY
 exec --no-startup-id xautolock -time 3 -locker '/home/mroeleveld/bin/i3exit lock'
 exec --no-startup-id feh --bg-fill ~/.config/i3/desktop.jpg
 exec --no-startup-id xrandr --output eDP1 --primary
+exec --no-startup-id setxkbmap -model pc105 -layout us -variant altgr-intl
