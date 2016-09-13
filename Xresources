@@ -10,58 +10,98 @@ Xft.rgba: rgb
 ! }}}
 
 ! Colors {{{
-! 'numixdarkest' from https://terminal.sexy/
+! 'numixdarkest' from https://terminal.sexy/ {{{
+! ! special
+! *.foreground:   #a2a2a2
+! *.background:   #282828
+! *.cursorColor:  #a2a2a2
+! 
+! ! black
+! *.color0:       #282828
+! *.color8:       #888888
+! 
+! ! red
+! *.color1:       #9c3528
+! *.color9:       #d64937
+! 
+! ! green
+! *.color2:       #61bc3b
+! *.color10:      #86df5d
+! 
+! ! yellow
+! *.color3:       #f3b43a
+! *.color11:      #fdd75a
+! 
+! ! blue
+! *.color4:       #0d68a8
+! *.color12:      #0f75bd
+! 
+! ! magenta
+! *.color5:       #744560
+! *.color13:      #9e5e83
+! 
+! ! cyan
+! *.color6:       #288e9c
+! *.color14:      #37c3d6
+! 
+! ! white
+! *.color7:       #a2a2a2
+! *.color15:      #f9f9f9
+! }}}
+
+! Baskerville Ivory Light from terminal.sexy {{{
 ! special
-*.foreground:   #a2a2a2
-*.background:   #282828
-*.cursorColor:  #a2a2a2
+*.foreground:   #6d727e
+*.background:   #fef9ec
+*.cursorColor:  #6d727e
 
 ! black
-*.color0:       #282828
-*.color8:       #888888
+*.color0:       #c5c1b4
+*.color8:       #a1a6b2
 
 ! red
-*.color1:       #9c3528
-*.color9:       #d64937
+*.color1:       #e75c58
+*.color9:       #b22b31
 
 ! green
-*.color2:       #61bc3b
-*.color10:      #86df5d
+*.color2:       #00a250
+*.color10:      #007427
 
 ! yellow
-*.color3:       #f3b43a
-*.color11:      #fdd75a
+*.color3:       #a08a00
+*.color11:      #715f00
 
 ! blue
-*.color4:       #0d68a8
-*.color12:      #0f75bd
+*.color4:       #208ffb
+*.color12:      #0065ca
 
 ! magenta
-*.color5:       #744560
-*.color13:      #9e5e83
+*.color5:       #d160c4
+*.color13:      #a03196
 
 ! cyan
-*.color6:       #288e9c
-*.color14:      #37c3d6
+*.color6:       #00a4c1
+*.color14:      #007693
 
 ! white
-*.color7:       #a2a2a2
-*.color15:      #f9f9f9
+*.color7:       #3e424d
+*.color15:      #282c36
+! }}}
 ! }}}
 
 ! URxvt {{{
 URxvt.perl-ext-common: default,matcher
 URxvt.url-launcher: /usr/bin/xdg-open
-URxvt.matcher.button: 2
+URxvt.matcher.button: 10
 URxvt.keysym.C-Delete: perl:matcher:last
 URxvt.keysym.M-Delete: perl:matcher:list
-URxvt.background: [95]#282828
+! URxvt.background: [50]#fef9ec
 URxvt.geometry: 100x30
-URxvt.blurRadius: 15
-URxvt.shading: 20
+URxvt.blurRadius: 10
+URxvt.shading: 170
 URxvt.depth: 32
 URxvt.transparent: on
-URxvt.fade: 30
+! URxvt.fade: 30
 URxvt.font: xft:Monoid HalfTight:size=11,Fira Mono for Powerline:Regular:size=11
 URxvt.boldFont: xft:Monoid HalfTight:style=bold:size=11, Fira Mono for Powerline:Bold:size=11
 URxvt.italicFont: xft:Monoid HalfTight:style=italic:size=11, Consolas:Italic:size=11
@@ -73,7 +113,7 @@ URxvt.cursorBlink: on
 URxvt.scrollBar: false
 URxvt.scrollBar_right: true
 URxvt.scrollBar_floating: true
-URxvt.color0: [95]#282828
+! URxvt.color0: [95]#282828
 ! URxvt.borderLess: on
 
 ! }}}

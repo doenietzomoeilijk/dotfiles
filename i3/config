@@ -6,67 +6,64 @@ exec --no-startup-id "compton -b --config ~/.config/i3/compton.conf"
 set $font pango:Monoid HalfTight,Fira Sans Condensed, Awesome 10
 set $mod Mod4
 
+# Colors from terminal.sexy
 # black
-set $color0 #555555
-set $color8 #888888
-
+set $color0  #c5c164
+set $color8  #a1a6b2
 # red
-set $color1 #9c3528
-set $color9 #d64937
-
+set $color1  #e75c58
+set $color9  #b22b31
 # green
-set $color2 #61bc3b
-set $color10 #86df5d
-
+set $color2  #00a250
+set $color10 #007427
 # yellow
-set $color3 #f3b43a
-set $color11 #fdd75a
-
+set $color3  #a08a00
+set $color11 #715f00
 # blue
-set $color4 #0d68a8
-set $color12 #0f75bd
-
+set $color4  #208ff6
+set $color12 #0065ca
 # magenta
-set $color5 #744560
-set $color13 #9e5e83
-
+set $color5  #d160c4
+set $color13 #a03196
 # cyan
-set $color6 #288e9c
-set $color14 #37c3d6
-
+set $color6  #00a4c1
+set $color14 #007693
 # white
-set $color7 #a2a2a2
-set $color15 #f9f9f9
-
-set $background #282828 
-set $foreground #a2a2a2 
-
+set $color7  #3e424d
+set $color15 #282c36
+# special
+set $background #fef9ec 
+set $foreground #6d727e 
 set $transparent #00000000
 
-set $borderWhite #ffffff99
-set $backgroundshade #28282899
-set $color0shade #55555599
-set $color8shade #88888899
-set $color1shade #9c352899
-set $color9shade #d6493799
-set $color4shade #0d68a899
-set $color12shade #0f75bd99
+set $backgroundshade #fef9ec7f
+set $foregroundshade #6d727e7f
+set $color0shade     #c5c1647f
+set $color8shade     #a1a6b27f
+set $color1shade     #e75c587f
+set $color9shade     #b22b317f
+set $color3shade     #a08a007f
+set $color11shade    #715f007f
+set $color4shade     #208ff67f
+set $color12shade    #0065ca7f
+set $color6shade     #00a4c17f
+set $color14shade    #0076937f
 
-# class                 border      backgr.     text        indicator   child_border
-client.focused          $color4     $color4     #ffffff     $color12shade    $borderWhite
-client.focused_inactive $color0     $color0     $foreground $color0shade     $backgroundshade
-client.unfocused        $background $background $foreground $backgroundshade $backgroundshade
-client.urgent           $color1     $color1     $foreground $color9shade     $color1shade
-client.placeholder      $background $background $foreground $color12shade    $color4shade
-client.background       $background
+# class                 border           backgr.          text             indicator   child_border
+client.focused          $color6shade     $color6shade     $background $color12shade    $backgroundshade
+client.focused_inactive $color14shade    $color14shade    $background $color0shade     $color0shade
+client.unfocused        $color8shade     $color8shade     $background $backgroundshade $color0shade
+client.urgent           $backgroundshade $backgroundshade $foreground $color9shade     $color1shade
+client.placeholder      $backgroundshade $backgroundshade $foreground $color12shade    $backgroundshade
+client.background       $backgroundshade
 
 gaps inner 10
 gaps outer 0
 smart_borders no_gaps
 # smart_gaps on
 # hide_edge_borders both
-new_window pixel 5
-new_float pixel 5
+new_window pixel 10
+new_float pixel 10
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -229,19 +226,20 @@ bar {
     id bar-1
     i3bar_command i3bar -t
     status_command SCRIPT_DIR=~/.config/i3/blocks i3blocks -c ~/.config/i3/blocks/i3blocks.conf
-    font pango:Roboto Condensed, Awesome 12
+    font pango:Roboto Condensed, Awesome 14
     position top
     tray_output primary
     separator_symbol false
     colors {
-        background $transparent
-        statusline $color7
+        background $backgroundshade
+        statusline $foreground
         separator  $color0
-        focused_statusline $color15
-        focused_workspace  $color12 $color4  $color15
-        active_workspace   $color0  $color0  $color15
-        urgent_workspace   $color1  $color9  $color15
-        binding_mode       $color3  $color11 $color1
+        focused_statusline   $color15
+        focused_workspace    $color3shade     $color3shade     $background
+        active_workspace     $backgroundshade $backgroundshade $foreground
+        inactive_workspace   $backgroundshade $backgroundshade $foreground
+        urgent_workspace     $color1shade     $color1shade     $background
+        binding_mode         $color6shade     $color6shade     $background
     }
 }
 
