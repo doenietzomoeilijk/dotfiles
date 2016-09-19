@@ -51,8 +51,8 @@ set $color14shade    #0076937f
 
 # class                 border           backgr.          text             indicator   child_border
 client.focused          $color6shade     $color6shade     $background $color12shade    $backgroundshade
-client.focused_inactive $color14shade    $color14shade    $background $color0shade     $color0shade
-client.unfocused        $color8shade     $color8shade     $background $backgroundshade $color0shade
+client.focused_inactive $color14shade    $color14shade    $background $backgroundshade $backgroundshade
+client.unfocused        $color8shade     $color8shade     $background $transparent     $transparent
 client.urgent           $backgroundshade $backgroundshade $foreground $color9shade     $color1shade
 client.placeholder      $backgroundshade $backgroundshade $foreground $color12shade    $backgroundshade
 client.background       $backgroundshade
@@ -132,6 +132,7 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # Workspaces and Assignments
+# workspace back_and_forth
 set $workspace1 "1  term"
 set $workspace2 "2  web"
 set $workspace3 "3  mail"
@@ -155,6 +156,7 @@ assign [class="Slack"] $workspace6
 assign [class="ownCloud"] $workspace7
 assign [class="heidisql.exe"] $workspace8
 assign [class="vinagre"] $workspace9
+assign [class="remmina"] $workspace9
 for_window [class="Enpass"] floating enable
 #for_window [class="Eog"] floating enable
 
@@ -284,9 +286,6 @@ bindsym $mod+Shift+b exec --no-startup-id xbacklight -dec 10
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
-exec /usr/bin/owncloud
-exec /home/max/Enpass/Enpass
-
 exec --no-startup-id autocutsel -s CLIPBOARD
 exec --no-startup-id autocutsel -s PRIMARY
 
@@ -294,3 +293,6 @@ exec --no-startup-id xautolock -time 3 -locker '/home/mroeleveld/bin/i3exit lock
 exec --no-startup-id feh --bg-fill ~/.config/i3/desktop.jpg
 exec --no-startup-id xrandr --output eDP1 --primary
 exec --no-startup-id setxkbmap -model pc105 -layout us -variant altgr-intl
+
+exec --no-startup-id /usr/bin/owncloud
+exec --no-startup-id /home/max/Enpass/Enpass

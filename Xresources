@@ -95,10 +95,10 @@ URxvt.url-launcher: /usr/bin/xdg-open
 URxvt.matcher.button: 10
 URxvt.keysym.C-Delete: perl:matcher:last
 URxvt.keysym.M-Delete: perl:matcher:list
-! URxvt.background: [50]#fef9ec
+URxvt.background: [90]#fef9ec
 URxvt.geometry: 100x30
 URxvt.blurRadius: 10
-URxvt.shading: 170
+URxvt.shading: 190
 URxvt.depth: 32
 URxvt.transparent: on
 ! URxvt.fade: 30
