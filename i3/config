@@ -57,13 +57,13 @@ client.urgent           $backgroundshade $backgroundshade $foreground $color9sha
 client.placeholder      $backgroundshade $backgroundshade $foreground $color12shade    $backgroundshade
 client.background       $backgroundshade
 
-gaps inner 10
-gaps outer 0
-smart_borders no_gaps
+# gaps inner 10
+# gaps outer 0
+# smart_borders no_gaps
 # smart_gaps on
 # hide_edge_borders both
-new_window pixel 10
-new_float pixel 10
+new_window pixel 5
+new_float pixel 5
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -228,6 +228,7 @@ bar {
     id bar-1
     i3bar_command i3bar -t
     status_command SCRIPT_DIR=~/.config/i3/blocks i3blocks -c ~/.config/i3/blocks/i3blocks.conf
+    # status_command python /usr/share/powerline/i3/powerline-i3.py
     font pango:Roboto Condensed, Awesome 14
     position top
     tray_output primary
