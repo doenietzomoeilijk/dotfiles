@@ -28,8 +28,8 @@
 
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    autocrlf = false
-	excludesfile = ~/.gitignore
+    autocrlf = input
+    excludesfile = ~/.gitignore
 
 [merge]
     tool = vimdiff
@@ -59,3 +59,6 @@
 
 [push]
     default = simple
+
+[include]
+    path = ~/.gitconfig-local
