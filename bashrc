@@ -33,3 +33,6 @@ if [ -f ~/.bashrc-local ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export GOPATH=/home/max/go
+export PATH=$GOPATH/bin:$PATH
