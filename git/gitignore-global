@@ -1,11 +1,5 @@
-tmp/
 .DS_Store
 .AppleDouble/
 .vagrant/
 .idea
-composer.lock
-tags
-GPATH
-GRTAGS
-GTAGS
-HTML
+.vscode

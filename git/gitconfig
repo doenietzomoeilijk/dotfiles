@@ -29,6 +29,7 @@
 [core]
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
     autocrlf = input
+    excludesfile = ~/.gitignore
 
 [merge]
     tool = vimdiff
@@ -58,5 +59,9 @@
 
 [push]
     default = simple
+
 [http "https://gopkg.in"]
 	followRedirects = true
+
+[include]
+    path = ~/.gitconfig-local
