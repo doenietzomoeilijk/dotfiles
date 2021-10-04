@@ -1,6 +1,22 @@
-# vim: set et:
+# vim: set ai sw=4 ts=4 et:
+
 # http://pastebin.com/S8m1jnY3
-exec --no-startup-id "compton -b --config ~/.config/i3/compton.conf"
+#exec --no-startup-id "compton -b --config ~/.config/i3/compton.conf"
+
+# NetworkManager applet
+exec --no-startup-id nm-applet
+exec --no-startup-id autocutsel -s CLIPBOARD
+exec --no-startup-id autocutsel -s PRIMARY
+exec --no-startup-id xautolock -time 3 -locker '/home/mroeleveld/bin/i3exit lock'
+exec --no-startup-id feh --bg-fill ~/.config/i3/desktop.jpg
+exec --no-startup-id xrandr --output eDP1 --primary
+exec --no-startup-id setxkbmap -model pc105 -layout us -variant altgr-intl
+exec --no-startup-id dunst
+exec --no-startup-id flameshot
+exec --no-startup-id nm-applet
+
+# exec --no-startup-id /usr/bin/owncloud
+# exec --no-startup-id /home/max/Enpass/Enpass
 
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 set $font pango:Monoid HalfTight,Fira Sans Condensed, Awesome 10
@@ -184,7 +200,7 @@ bindsym $mod+Shift+8 move container to workspace $workspace8; workspace $workspa
 bindsym $mod+Shift+9 move container to workspace $workspace9; workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10; workspace $workspace10
 
-bindsym $mod+Return exec i3-sensible-terminal; workspace $workspace1
+bindsym $mod+Return exec alacritty; workspace $workspace1
 bindsym $mod+Shift+Return exec nautilus
 
 # reload the configuration file
@@ -192,10 +208,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-# Reset displays and Workspaces
-bindsym $mod+p exec --no-status-id /home/max/bin/xwork;
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -246,12 +259,7 @@ bar {
     }
 }
 
-# NetworkManager applet
-exec --no-startup-id nm-applet
 
-# Fix trackpad
-exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
-exec --no-startup-id xinput set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
 
 # Locking, stolen from https://faq.i3wm.org/question/239/how-do-i-suspendlockscreen-and-logout.1.html
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
@@ -274,26 +282,16 @@ bindsym $mod+Shift+L exec --no-startup-id i3exit lock
 
 # Volume and other interesting keys
 # See the list here: http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
-bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
-bindsym XF86Sleep exec --no-startup-id i3exit suspend
-bindsym XF86Calculator exec --no-startup-id gnome-calculator
-bindsym XF86Explorer exec nautilus
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
-bindsym $mod+b exec --no-startup-id xbacklight -inc 10
-bindsym $mod+Shift+b exec --no-startup-id xbacklight -dec 10
+# bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+ unmute
+# bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%- unmute
+# bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+# bindsym XF86Sleep exec --no-startup-id i3exit suspend
+# bindsym XF86Calculator exec --no-startup-id gnome-calculator
+# bindsym XF86Explorer exec nautilus
+# bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
+# bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
+# bindsym $mod+b exec --no-startup-id xbacklight -inc 10
+# bindsym $mod+Shift+b exec --no-startup-id xbacklight -dec 10
 bindsym --release Caps_Lock exec pkill -SIGRTMIN+11 i3blocks
 bindsym --release Num_Lock  exec pkill -SIGRTMIN+11 i3blocks
 
-exec --no-startup-id autocutsel -s CLIPBOARD
-exec --no-startup-id autocutsel -s PRIMARY
-
-exec --no-startup-id xautolock -time 3 -locker '/home/mroeleveld/bin/i3exit lock'
-exec --no-startup-id feh --bg-fill ~/.config/i3/desktop.jpg
-exec --no-startup-id xrandr --output eDP1 --primary
-exec --no-startup-id setxkbmap -model pc105 -layout us -variant altgr-intl
-
-exec --no-startup-id /usr/bin/owncloud
-exec --no-startup-id /home/max/Enpass/Enpass
