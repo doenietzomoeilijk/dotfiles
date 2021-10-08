@@ -50,5 +50,5 @@
 #define COLOR13      base0E
 #define COLOR14      base0C
 #define COLOR15      base07
-#define FOREGROUND   base05
+#define FOREGROUND   base07
 #define BACKGROUND   base00
