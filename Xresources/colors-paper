@@ -1,0 +1,54 @@
+! Paper
+! https://github.com/NLKNguyen/papercolor-theme
+/* #define FOREGROUND #cfd8dc */
+/* #define BACKGROUND #37474f */
+/* #define COLOR0     #141414 */
+/* #define COLOR8     #928374 */
+/* #define COLOR1     #d32f2f */
+/* #define COLOR9     #d32f2f */
+/* #define COLOR2     #4caf50 */
+/* #define COLOR10    #4caf50 */
+/* #define COLOR3     #ff9800 */
+/* #define COLOR11    #f9ce1d */
+/* #define COLOR4     #3f51b5 */
+/* #define COLOR12    #2196f3 */
+/* #define COLOR5     #f50057 */
+/* #define COLOR13    #f50057 */
+/* #define COLOR6     #26c6da */
+/* #define COLOR14    #26c6da */
+/* #define COLOR7     #546e7a */
+/* #define COLOR15    #ffffff */
+#define base00 #1c1c1c
+#define base01 #af005f
+#define base02 #5faf00
+#define base03 #d7af5f
+#define base04 #5fafd7
+#define base05 #808080
+#define base06 #d7875f
+#define base07 #d0d0d0
+#define base08 #585858
+#define base09 #5faf5f
+#define base0A #afd700
+#define base0B #af87d7
+#define base0C #ffaf00
+#define base0D #ff5faf
+#define base0E #00afaf
+#define base0F #5f8787
+#define COLOR0       base00
+#define COLOR1       base08
+#define COLOR2       base0B
+#define COLOR3       base0A
+#define COLOR4       base0D
+#define COLOR5       base0E
+#define COLOR6       base0C
+#define COLOR7       base05
+#define COLOR8       base03
+#define COLOR9       base08
+#define COLOR10      base0B
+#define COLOR11      base0A
+#define COLOR12      base0D
+#define COLOR13      base0E
+#define COLOR14      base0C
+#define COLOR15      base07
+#define FOREGROUND   base05
+#define BACKGROUND   base00

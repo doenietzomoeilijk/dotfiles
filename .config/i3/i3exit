@@ -1,6 +1,6 @@
 #!/bin/sh
 lock() {
-    i3lock
+    i3lock --color=000000 --image=git/dotfiles/wallpapers/neon-strips-blur.png
 }
 
 case "$1" in

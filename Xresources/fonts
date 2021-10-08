@@ -1,0 +1,7 @@
+! Font definitions
+
+#define SANS_SERIF_FONT IBM Plex Sans
+#define MONO_FONT IBM Plex Mono
+#define FONT_SIZE 11
+
+*.font: xft:MONO_FONT:size=FONT_SIZE

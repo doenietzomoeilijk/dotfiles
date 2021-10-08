@@ -1,0 +1,221 @@
+; vim:ft=dosini
+
+[colors]
+background  = ${xrdb:background:#000}
+foreground  = ${xrdb:foreground:#999}
+transparent = #00000000
+color0      = ${xrdb:color0:#000}
+color1      = ${xrdb:color1:#c00}
+color2      = ${xrdb:color2:#0c0}
+color3      = ${xrdb:color3:#c63}
+color4      = ${xrdb:color4:#00c}
+color5      = ${xrdb:color5:#c0c}
+color6      = ${xrdb:color6:#09c}
+color7      = ${xrdb:color7:#ccc}
+color8      = ${xrdb:color8:#333}
+color9      = ${xrdb:color9:#f00}
+color10     = ${xrdb:color10:#0f0}
+color11     = ${xrdb:color11:#ff0}
+color12     = ${xrdb:color12:#00f}
+color13     = ${xrdb:color13:#f0f}
+color14     = ${xrdb:color14:#0ff}
+color15     = ${xrdb:color15:#fff}
+
+[global/wm]
+margin-bottom = 0
+
+[settings] 
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+format-background = ${colors.background}
+format-padding = 4
+format-spacing = 1
+
+[bar/main]
+wm-restack = i3
+override-redirect = true
+enable-ipc = true
+bottom = true
+locale = nl_NL.UTF-8
+
+font-0 = "IBM Plex Sans:size=10:weight=regular;2"
+font-1 = "IBM Plex Sans:size=10:weight=bold;2"
+font-2 = "IBM Plex Mono:size=10:weight=regular;2"
+font-3 = "IBM Plex Mono:size=10:weight=bold;2"
+font-4 = "Material Icons:size=13:style=Regular;4"
+
+width = 100%
+height = 30
+fixed-center = true
+background = ${colors.transparent}
+foreground = ${colors.foreground}
+line-size = 2
+line-color = ${colors.color3}
+tray-background = ${colors.background}
+tray-position = right
+tray-padding = 1
+tray-padding-left = 1
+tray-padding-right = 1
+
+modules-left = i3
+modules-center = 
+modules-right = cpu memory disks screenshotmenu xkeyboard date
+
+[bar/secondary]
+wm-restack = i3
+override-redirect = true
+enable-ipc = true
+
+font-0 = "IBM Plex Sans:size=10:weight=regular;2"
+font-1 = "IBM Plex Sans:size=10:weight=bold;2"
+font-2 = "IBM Plex Mono:size=10:weight=regular;2"
+font-3 = "IBM Plex Mono:size=10:weight=bold;2"
+font-4 = "Material Icons:size=13:style=Regular;4"
+
+width = 100%
+height = 30
+fixed-center = true
+background = ${colors.transparent}
+foreground = ${colors.foreground}
+
+modules-left =
+modules-center = xwindow
+modules-right = 
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+format-prefix = ""
+format-prefix-foreground = ${colors.color7}
+format-spacing = 0
+ws-icon-0 = "1:work;"
+ws-icon-1 = "2:email;"
+ws-icon-2 = "3:code;"
+ws-icon-3 = "4:priv;"
+ws-icon-4 = "5:graphics;"
+ws-icon-5 = "6:notes;"
+ws-icon-6 = "7:office;"
+ws-icon-default = 
+format = <label-state> <label-mode>
+
+label-mode = %mode%
+label-mode-padding = 1
+label-mode-background = ${colors.color2}
+label-mode-foreground = ${colors.color15}
+
+label-focused = %index% %{T5}%icon%%{T-}
+label-focused-font = 4
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.color3}
+label-focused-underline = ${colors.color3}
+label-focused-padding = 1
+
+label-unfocused = %index% %icon%
+label-unfocused-font = 3
+label-unfocused-background = ${colors.background}
+label-unfocused-foreground = ${colors.foreground}
+label-unfocused-padding = 1
+
+label-urgent = %index% %icon%
+label-urgent-font = 3
+label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.color1}
+label-urgent-padding = 1
+
+[module/xwindow]
+type = internal/xwindow
+format-background = ${colors.transparent}
+format-prefix = " "
+format-prefix-foreground = ${colors.color7}
+label = %title%
+label-empty = 
+label-font = 2
+
+[module/date]
+type = internal/date
+date = %a %Y-%m-%d%
+date-alt = "Week %W"
+time = %H:%M
+format-prefix = " "
+format-prefix-foreground = ${colors.color7}
+label = %date% %{T2}%time%%{T-}
+label-font = 1
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = scroll lock
+format = <label-indicator>
+format-prefix = "  "
+format-prefix-foreground = ${colors.color7}
+indicator-icon-0 = caps lock;;
+indicator-icon-1 = num lock;;
+label-font = 4
+label-indicator = %icon%
+label-indicator-foreground = ${colors.color10}
+label-indicator-off = %icon%
+label-indicator-off-foreground = ${colors.color0}
+
+[module/memory]
+type = internal/memory
+interval = 3
+format-prefix = ""
+format-prefix-foreground = ${colors.color7}
+label = %percentage_used%% %gb_free%
+
+[module/cpu]
+type = internal/cpu
+format-prefix = ""
+format-prefix-foreground = ${colors.color7}
+
+[module/disks]
+type = internal/fs
+fixed-values = true
+format-prefix = "DSK"
+format-prefix-foreground = ${colors.color7}
+label-mounted = %mountpoint% %free%
+spacing = 0
+mount-0 = /
+mount-1 = /mnt/bucket
+interval = 30
+
+[module/powermenu]
+type = custom/menu
+expand-right = false
+label-font = 5
+label-open = ""
+label-open-foreground = ${colors.color15}
+label-close = ""
+label-close-foreground = ${colors.color1}
+label-separator = |
+label-separator-foreground = ${colors.color7}
+menu-0-0 = 
+menu-0-0-exec = menu-open-1
+menu-0-1 = 
+menu-0-1-exec = menu-open-2
+menu-0-2 = 
+menu-0-2-exec = systemctl suspend
+menu-1-0 = confirm
+menu-1-0-exec = sudo reboot
+menu-1-1 = cancel
+menu-1-1-exec = menu-open-0
+menu-2-0 = confirm
+menu-2-0-exec = sudo poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
+
+[module/screenshotmenu]
+type = custom/menu
+expand-right = false
+label-font = 5
+label-open = ""
+label-close = ""
+label-close-foreground = ${colors.color1}
+label-separator = |
+label-separator-foreground = ${colors.color7}
+menu-0-0 = ""
+menu-0-0-exec = flameshot gui --delay 3000 -p ~/Pictures
+menu-0-1 = ""
+menu-0-1-exec = flameshot launcher

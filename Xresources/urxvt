@@ -1,0 +1,19 @@
+URxvt.perl-ext-common:    default,matcher
+URxvt.url-launcher:       /usr/bin/xdg-open
+URxvt.matcher.button:     10
+URxvt.keysym.C-Delete:    perl:matcher:last
+URxvt.keysym.M-Delete:    perl:matcher:list
+URxvt.geometry:           100x30
+URxvt.blurRadius:         10
+URxvt.shading:            190
+URxvt.depth:              32
+URxvt.boldFont:           xft:MONO_FONT:style=bold:size=FONT_SIZE
+URxvt.italicFont:         xft:MONO_FONT:style=italic:size=FONT_SIZE
+URxvt.boldItalicFont:     xft:MONO_FONT:Bold Italic:size=FONT_SIZE
+URxvt.letterSpace:        -1
+URxvt.underLine:          on
+URxvt.boldMode:           on
+URxvt.cursorBlink:        on
+URxvt.scrollBar:          false
+URxvt.scrollBar_right:    true
+URxvt.scrollBar_floating: true

@@ -4,7 +4,7 @@
 
 [github]
     user = doenietzomoeilijk
-    token = 70e2542ffcc5f9dbcd8750d3f6388b9873de659c
+    token = 1c009b9dc910024227c480d6a29461c489426265
 
 [color]
     ui = true
@@ -65,3 +65,8 @@
 
 [include]
     path = ~/.gitconfig-local
+[pull]
+	rebase = true
+[cola]
+	spellcheck = false
+	startupmode = folder
