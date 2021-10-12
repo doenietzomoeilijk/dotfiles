@@ -2,8 +2,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Font {{{
-set $font xft:IBM Plex Sans,Monoid HalfTight,Fira Sans Condensed, Awesome 10
-font $font
+# set $font xft:IBM Plex Sans,Monoid HalfTight,Fira Sans Condensed, Awesome 10
+# font $font
 # }}}
 
 # Keys {{{
@@ -18,7 +18,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec i3-sensible-terminal
+#alacritty
 bindsym $mod+Shift+Return exec thunar; workspace $ws4
 
 # Volume and other interesting keys
@@ -79,7 +80,7 @@ set_from_resource $cursor     i3wm.cursorColor
 # class                 border      backgr.     text        indicator   child_border
 client.background       $background
 client.placeholder      $background $background $foreground $background $background
-client.focused          $color7     $background $foreground $color15    $color7
+client.focused          $color7     $background $foreground $color7     $color7
 client.unfocused        $background $background $color8     $background $background
 client.focused_inactive $background $background $foreground $background $background
 client.urgent           $color1     $background $foreground $color9     $color1
@@ -87,7 +88,7 @@ client.urgent           $color1     $background $foreground $color9     $color1
 
 # Gaps and borders {{{
 gaps                    inner  20
-gaps                    outer  40
+gaps                    outer  25
 smart_borders           on
 default_border          pixel  3
 default_floating_border pixel  3
@@ -357,10 +358,11 @@ exec_always --no-startup-id picom
 exec --no-startup-id autocutsel -s CLIPBOARD
 # exec --no-startup-id autocutsel -s PRIMARY
 exec --no-startup-id xautolock -time 3 -locker '~/bin/i3exit lock'
-exec_always --no-startup-id feh --bg-fill ~/git/dotfiles/wallpapers/tapet-1.png
+exec_always --no-startup-id feh --bg-fill ~/git/dotfiles/wallpapers/tumbleweed.png
 exec --no-startup-id setxkbmap -model pc105 -layout us -variant altgr-intl
 exec --no-startup-id numlockx on
 exec --no-startup-id nm-applet
+exec --no-startup-id pasystray
 exec --no-startup-id flameshot
 exec --no-startup-id nextcloud
 exec --no-startup-id ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox
