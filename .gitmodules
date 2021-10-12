@@ -4,3 +4,6 @@
 [submodule ".tmux/plugins/nord-tmux"]
 	path = .tmux/plugins/nord-tmux
 	url = https://github.com/arcticicestudio/nord-tmux
+[submodule "scripts/polybar-spotify"]
+	path = .config/polybar/polybar-spotify
+	url = https://github.com/Jvanrhijn/polybar-spotify.git

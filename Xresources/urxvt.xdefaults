@@ -12,7 +12,7 @@ URxvt.boldFont:           xft:MONO_FONT:style=bold:size=FONT_SIZE
 URxvt.italicFont:         xft:MONO_FONT:style=italic:size=FONT_SIZE
 URxvt.boldItalicFont:     xft:MONO_FONT:Bold Italic:size=FONT_SIZE
 URxvt.letterSpace:        -1
-URxvt.lineSpace:          1
+/* URxvt.lineSpace:          1 */
 URxvt.underLine:          on
 URxvt.boldMode:           on
 URxvt.cursorBlink:        on
