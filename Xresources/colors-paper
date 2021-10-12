@@ -52,3 +52,4 @@
 #define COLOR15      base07
 #define FOREGROUND   base07
 #define BACKGROUND   base00
+#define CURSORCOLOR  base07

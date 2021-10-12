@@ -1,0 +1,5 @@
+XTerm*saveLInes: 0
+XTerm*scrollBar: false
+XTerm*internalBorder: 5
+XTerm*borderWidth: 0
+XTerm*font: xft:MONO_FONT:style=regular:size=FONT_SIZE

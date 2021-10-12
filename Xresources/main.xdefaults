@@ -7,8 +7,8 @@ Xft.hintstyle: hintmedium
 Xft.lcdfilter: lcddefault
 Xft.rgba: rgb
 
-#include "colors-paper"
-!#include "colors-gruvbox-dark"
+#include "colors-nord.xdefaults"
+!#include "colors-gruvbox-dark.xdefaults"
 ! Color:  Norm:  Bright:
 ! Black   color0 color8
 ! Red     color1 color9
@@ -20,7 +20,7 @@ Xft.rgba: rgb
 ! White   color7 color15
 *.foreground:  FOREGROUND
 *.background:  BACKGROUND
-*.cursorColor: FOREGROUND
+*.cursorColor: CURSORCOLOR
 *.color0:      COLOR0
 *.color8:      COLOR8
 *.color1:      COLOR1
@@ -38,8 +38,8 @@ Xft.rgba: rgb
 *.color7:      COLOR7
 *.color15:     COLOR15
 
-#include "fonts"
-
-#include "urxvt"
-#include "rofi"
+#include "fonts.xdefaults"
+#include "urxvt.xdefaults"
+#include "xterm.xdefaults"
+#include "rofi.xdefaults"
 

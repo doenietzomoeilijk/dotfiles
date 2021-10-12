@@ -1,4 +1,5 @@
-URxvt.perl-ext-common:    default,matcher
+URxvt.perl-ext-common:    default,clipboard,keyboard-select,matcher,selection-to-clipboard
+
 URxvt.url-launcher:       /usr/bin/xdg-open
 URxvt.matcher.button:     10
 URxvt.keysym.C-Delete:    perl:matcher:last
@@ -11,9 +12,20 @@ URxvt.boldFont:           xft:MONO_FONT:style=bold:size=FONT_SIZE
 URxvt.italicFont:         xft:MONO_FONT:style=italic:size=FONT_SIZE
 URxvt.boldItalicFont:     xft:MONO_FONT:Bold Italic:size=FONT_SIZE
 URxvt.letterSpace:        -1
+URxvt.lineSpace:          1
 URxvt.underLine:          on
 URxvt.boldMode:           on
 URxvt.cursorBlink:        on
 URxvt.scrollBar:          false
 URxvt.scrollBar_right:    true
 URxvt.scrollBar_floating: true
+
+URxvt.copyCommand: xclip -i -selection clipboard
+URxvt.pasteCommand: xclip -o -selection clipboard
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-s: perl:keyboard-select:search
+URxvt.keysym.M-u: perl:url-select:select_next

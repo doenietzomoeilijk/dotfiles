@@ -1,7 +1,8 @@
 ! Font definitions
 
 #define SANS_SERIF_FONT IBM Plex Sans
-#define MONO_FONT IBM Plex Mono
+/* #define MONO_FONT IBM Plex Mono */
+#define MONO_FONT JetBrainsMono Nerd Font Mono:style=Regular
 #define FONT_SIZE 11
 
 *.font: xft:MONO_FONT:size=FONT_SIZE

@@ -1,7 +1,7 @@
 rofi.modi:           drun,window,ssh,run
 rofi.opacity:        90
 rofi.width:          50
-rofi.lines:          15
+rofi.lines:          10
 rofi.columns:        1
 rofi.font:           SANS_SERIF_FONT FONT_SIZE
 rofi.bw:             1
