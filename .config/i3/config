@@ -80,7 +80,7 @@ set_from_resource $cursor     i3wm.cursorColor
 # class                 border      backgr.     text        indicator   child_border
 client.background       $background
 client.placeholder      $background $background $foreground $background $background
-client.focused          $color7     $background $foreground $color7     $color7
+client.focused          $color7     $background $foreground $color7     $color4
 client.unfocused        $background $background $color8     $background $background
 client.focused_inactive $background $background $foreground $background $background
 client.urgent           $color1     $background $foreground $color9     $color1
