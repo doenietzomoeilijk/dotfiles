@@ -14,6 +14,7 @@ include-file = ~/.config/polybar/modules/date.ini
 ; include-file = ~/.config/polybar/modules/time.ini
 include-file = ~/.config/polybar/modules/i3.ini
 include-file = ~/.config/polybar/modules/pulseaudio.ini
+include-file = ~/.config/polybar/modules/caps.ini
 
 include-file = ~/.config/polybar/bars/main.ini
 include-file = ~/.config/polybar/bars/secondary.ini
