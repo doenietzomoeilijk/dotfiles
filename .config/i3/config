@@ -2,8 +2,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Font {{{
-# set $font xft:IBM Plex Sans,Monoid HalfTight,Fira Sans Condensed, Awesome 10
-# font $font
+set $font xft:JetBrainsMono Nerd Font
+font $font
 # }}}
 
 # Keys {{{
