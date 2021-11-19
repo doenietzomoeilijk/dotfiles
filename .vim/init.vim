@@ -79,8 +79,8 @@ Plug 'christoomey/vim-tmux-navigator'
 " Plug 'vimwiki/vimwiki'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'michal-h21/vim-zettel'
-Plug 'alok/notational-fzf-vim'
+" Plug 'michal-h21/vim-zettel'
+" Plug 'alok/notational-fzf-vim'
 call plug#end()
 " }}}
 
@@ -467,8 +467,8 @@ autocmd BufRead,BufNewFile $NOTES_DIR* setlocal path+=$NOTES_DIR/**
 let g:zettel_format = "%raw_title"
 let g:zettel_date_format = "%Y%m%d%H%M"
 let g:zettel_link_format="[[%title]]"
-let g:nv_search_paths = [$NOTES_DIR]
-nnoremap <leader>zn :ZettelNew<space>
+" let g:nv_search_paths = [$NOTES_DIR]
+" nnoremap <leader>zn :ZettelNew<space>
 nmap gB :NV <C-R>=expand("%:t:r")<cr><cr>
 " }}}
 
