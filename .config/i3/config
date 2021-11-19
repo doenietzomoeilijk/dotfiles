@@ -18,9 +18,9 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec alacritty # i3-sensible-terminal
 #alacritty
-bindsym $mod+Shift+Return exec thunar; workspace $ws4
+bindsym $mod+Shift+Return exec thunar
 
 # Volume and other interesting keys
 # See the list here: http://wiki.linuxquestions.org/wiki/XF86_keyboard_symbols
@@ -87,8 +87,9 @@ client.urgent           $color1     $background $foreground $color9     $color1
 # }}}
 
 # Gaps and borders {{{
-gaps                    inner  20
-gaps                    outer  25
+gaps                    inner  5
+gaps                    outer  0
+gaps                    bottom 20
 smart_borders           on
 default_border          pixel  3
 default_floating_border pixel  3
@@ -228,8 +229,8 @@ set $ws4 "4:priv"
 set $ws5 "5:graphics"
 set $ws6 "6:notes" 
 set $ws7 "7:office" 
-set $ws8 "8"
-set $ws9 "9"
+set $ws8 "8:vm-remote"
+set $ws9 "9:music"
 set $ws10 "10"
 
 assign [class="google-chrome"] → $ws1
@@ -243,14 +244,19 @@ assign [class="Firefox"] → $ws4
 assign [class="Element"] → $ws4
 assign [class="TelegramDesktop"] → $ws4
 assign [class="Signal"] → $ws4
-assign [class="Thunar"] → $ws4
+# assign [class="Thunar"] → $ws4
 assign [class="Nautilus"] → $ws4
 assign [class="Gimp-*"] → $ws5
+assign [class="krita"] → $ws5
 assign [class="Joplin"] → $ws6
 assign [class="libreoffice"] → $ws7
+assign [class="Virt-manager"] → $ws8
+assign [class="Spotify"] → $ws9
+for_window [class="Bitwarden"] floating enable
+for_window [class="Gnome-calculator"] floating enable
 for_window [class="jetbrains-phpstorm" title="win0"] floating enable
-for_window [class="kruler"] floating enable
 for_window [class="kcharselect"] floating enable
+for_window [class="kruler"] floating enable
 for_window [title="^xdg-su: .*"] floating enable
 
 bindsym $mod+1 workspace $ws1
@@ -309,6 +315,8 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+bindsym $mod+c move position center
+
 # Instead of the default explicit H and V split
 # bindsym $mod+v split toggle
 bindsym $mod+v split v
@@ -353,13 +361,13 @@ bindsym $mod+r mode "resize"
 
 # Autostart {{{
 exec_always --no-startup-id polybar-launch.sh
-exec_always --no-startup-id pkill dunst; dunst -lb "$background" -lf "$foreground" -lfr "$background" -nb "$background" -nf "$foreground" -nfr "$background" -cb "$background" -cf "$color3"
+exec_always --no-startup-id dunst-launch.sh
 exec_always --no-startup-id picom
 exec --no-startup-id autocutsel -s CLIPBOARD
 # exec --no-startup-id autocutsel -s PRIMARY
-exec --no-startup-id xautolock -time 3 -locker '~/bin/i3exit lock'
+exec --no-startup-id xautolock -time 10 -locker '~/bin/i3exit lock'
 exec_always --no-startup-id feh --bg-fill ~/git/dotfiles/wallpapers/tumbleweed.png
-exec --no-startup-id setxkbmap -model pc105 -layout us -variant altgr-intl
+exec --no-startup-id setxkbmap -model pc105 -layout us -option compose:ralt # -variant altgr-intl
 exec --no-startup-id numlockx on
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray

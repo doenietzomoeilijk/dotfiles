@@ -3,6 +3,7 @@
 include-file = ~/.config/polybar/colors.ini
 include-file = ~/.config/polybar/settings.ini
 
+include-file = ~/.config/polybar/modules/caps.ini
 include-file = ~/.config/polybar/modules/screenshotmenu.ini
 include-file = ~/.config/polybar/modules/powermenu.ini
 include-file = ~/.config/polybar/modules/cpu.ini
@@ -14,7 +15,6 @@ include-file = ~/.config/polybar/modules/date.ini
 ; include-file = ~/.config/polybar/modules/time.ini
 include-file = ~/.config/polybar/modules/i3.ini
 include-file = ~/.config/polybar/modules/pulseaudio.ini
-include-file = ~/.config/polybar/modules/caps.ini
 include-file = ~/.config/polybar/modules/spotify.ini
 
 include-file = ~/.config/polybar/bars/main.ini
