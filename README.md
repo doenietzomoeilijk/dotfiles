@@ -8,7 +8,7 @@ for ZSH.
 
 ## Requirements
 
-* zsh & oh-my-zsh
+* zsh & [oh-my-zsh](https://ohmyz.sh/)
 * i3-gaps
 * polybar
 * dunst
