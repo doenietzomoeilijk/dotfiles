@@ -1,3 +1,5 @@
+! vim: set ft=xdefaults fdm=marker foldlevel=0 foldcolumn=0:
+
 XTerm*saveLInes: 0
 XTerm*scrollBar: false
 XTerm*internalBorder: 5

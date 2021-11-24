@@ -1,4 +1,4 @@
-! vim: set fdm=marker foldlevel=0 foldcolumn=0:
+! vim: set ft=xdefaults fdm=marker foldlevel=0 foldcolumn=0:
 
 Xft.antialias: 1
 Xft.dpi: 96

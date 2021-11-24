@@ -1,3 +1,5 @@
+! vim: set ft=xdefaults fdm=marker foldlevel=0 foldcolumn=0:
+
 ! 'numixdarkest' from https://terminal.sexy/ 
 #define FOREGROUND #a2a2a2
 #define BACKGROUND #282828

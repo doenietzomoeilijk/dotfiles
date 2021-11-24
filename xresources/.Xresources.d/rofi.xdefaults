@@ -1,3 +1,5 @@
+! vim: set ft=xdefaults fdm=marker foldlevel=0 foldcolumn=0:
+
 rofi.modi:           drun,window,ssh,run
 rofi.opacity:        90
 rofi.width:          50
