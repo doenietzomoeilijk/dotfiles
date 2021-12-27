@@ -9,7 +9,7 @@ set modeline
 " set encoding="utf8"
 
 " Plug {{{
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 " Bling
 " Plug 'altercation/vim-colors-solarized'
 Plug 'vim-airline/vim-airline'
