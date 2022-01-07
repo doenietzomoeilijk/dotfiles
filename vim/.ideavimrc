@@ -23,3 +23,6 @@ set ideastatusicon=gray
 set idearefactormode=visual
 set ideajoin
 set ideamarks
+
+sethandler <C-i> n:vim i:ide
+sethandler <C-o> n:vim i:ide
