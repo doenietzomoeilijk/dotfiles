@@ -36,6 +36,7 @@ Plug 'ap/vim-css-color'
 Plug 'freitass/todo.txt-vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'kmonad/kmonad-vim'
 
 " Integration
 Plug 'airblade/vim-gitgutter'
