@@ -1,0 +1,11 @@
+[Unit]
+Description=Kmonad
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=/home/max/git/kmonad/kmonad /home/max/dotfiles/kmonad/keychron-k2.kbd
+Nice=-20
+
+[Install]
+WantedBy=default.target
