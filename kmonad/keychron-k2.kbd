@@ -28,7 +28,7 @@
   qwe (layer-switch qwerty)
   sup (layer-toggle movement)
   shsp (layer-toggle movement)
-  thnr (tap-hold-next-release 1000 spc @shsp)
+  thnr (tap-hold-next-release 300 spc @shsp :timeout-button spc)
 )
 
 (deflayer qwerty
@@ -37,7 +37,7 @@
   tab   q    w    e    r    t    y    u    i    o    p    [    ]    \\   del
   caps   a    s    d    f    g    h    j    k    l    ;    '    ret      home
   lsft    z    x    c    v    b    n    m    ,    .    /    rsft      up end
-  lctl lmet lalt             spc             ralt         @sup left down rght
+  lctl lmet lalt             @thnr           ralt         @sup left down rght
 )
 
 (deflayer empty
@@ -52,8 +52,8 @@
 (deflayer movement
   @qwe _    _    _    _    _    _    _    _    _    _    _    _    _     _  
   _    _    _    _    _    _    _    _    _    _    _    _    _    del   _  
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _     _  
-  _     _    _    _    pgdn _    left down up   rght _    _    _         _  
+  _    _    _    end  _    _    _    _    _    _    _    _    _    _     _  
+  _     home _    _    pgdn _    left down up   rght _    _    _         _  
   _      _    _    _    _    pgup _    _    _    _    _    _        pgup _  
   _    _    _                _               _            _    home pgdn end  
 )
