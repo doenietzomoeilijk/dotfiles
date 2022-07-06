@@ -10,7 +10,7 @@ plugins=(git docker docker-compose sudo tmux)
 
 source $ZSH/oh-my-zsh.sh
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f /usr/share/powerline/zsh/powerline.zsh ] && . /usr/share/powerline/zsh/powerline.zsh
 [ -f /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ] && . /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
